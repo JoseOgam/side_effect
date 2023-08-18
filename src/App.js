@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getUsers } from "./redux/features/usersSlice";
 
-function App() {
+const App = () => {
+  const { users, loading } = useSelector((state) => state.users);
+
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getUsers());
+  });
+
+  if (loading) {
+    return <h1>loading...</h1>;
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {users.map((item, index) => (
+        <div key={index}>
+          <h2> {item.id} </h2>
+          <p>{item.name}</p>
+        </div>
+      ))}
     </div>
   );
-}
+};
 
 export default App;
+//https://jsonplaceholder.typicode.com/posts
