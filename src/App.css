@@ -1,0 +1,27 @@
+.main {
+  display: grid;
+  /* height: 640px;
+  width: 425px; */
+  border-radius: 18px;
+  background-color: rgb(91, 119, 144);
+  margin-top: 10px;
+  margin-bottom: 10px;
+  max-width: 500px;
+}
+
+.view {
+  border-radius: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* .title {
+  justify-content: center;
+} */
+inner {
+  height: 540px;
+  width: 425px;
+  border-radius: 38px;
+  background-color: rgb(91, 119, 144);
+  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffff;
+}
