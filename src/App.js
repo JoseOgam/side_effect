@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { getUsers } from "./redux/features/usersSlice";
 import "./App.css";
 // import ListUsers from "./components/listUsers";
