@@ -2,13 +2,31 @@
   display: grid;
   /* height: 640px;
   width: 425px; */
-  border-radius: 18px;
+  border-radius: 10px;
   background-color: rgb(91, 119, 144);
   margin-top: 10px;
   margin-bottom: 10px;
   max-width: 500px;
 }
+button {
+  display: flex;
+  border-radius: 10px;
+  background-color: blue;
+}
+.forms {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+input {
+  margin: 10px;
+  border-radius: 20px;
+}
+
+form {
+  display: grid;
+}
 .view {
   border-radius: 38px;
   display: flex;

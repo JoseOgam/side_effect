@@ -4,6 +4,7 @@ import { getUsers } from "./redux/features/usersSlice";
 import "./App.css";
 // import ListUsers from "./components/listUsers";
 import ListPost from "./components/listPost";
+import AddPost from "./components/addPost";
 
 const App = () => {
   //   const { users, loading } = useSelector((state) => state.users);
@@ -21,6 +22,7 @@ const App = () => {
       {/* {users.map((item, index) => {
         return <ListUsers item={item} />;
       })} */}
+      <AddPost />
       <ListPost />
     </div>
   );

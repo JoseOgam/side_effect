@@ -10,7 +10,17 @@ export const fetchPost = createAsyncThunk("posts/fetchPost", async () => {
     return e.message;
   }
 });
-
+export const addNewPost = createAsyncThunk(
+  "posts/addNewPost",
+  async (initialPost) => {
+    try {
+      const response = await axios.post(Base_url, initialPost);
+      return response.data;
+    } catch (e) {
+      return e.message;
+    }
+  }
+);
 const postsSlice = createSlice({
   name: "posts",
   initialState: {
@@ -29,6 +39,9 @@ const postsSlice = createSlice({
     },
     [fetchPost.rejected]: (state, action) => {
       state.status = false;
+    },
+    [addNewPost.fulfilled]: (state, action) => {
+      state.posts.push(action.payload);
     },
   },
 });
